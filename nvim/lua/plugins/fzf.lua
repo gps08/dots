@@ -9,8 +9,7 @@ return {
     local function map(key, action, desc)
       vim.keymap.set(
         { 'n', 'v', 'i' },
-        '<leader>/' .. key,
-        function() action() end,
+        '<leader>/' .. key, action,
         { desc = desc, silent = true }
       )
     end
