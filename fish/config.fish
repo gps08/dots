@@ -27,11 +27,8 @@ abbr gb 'git branch'
 abbr gl 'git log'
 abbr gr 'git reset --hard origin/mainline && git pull'
 abbr gp 'git pull --rebase --autostash'
-abbr grr 'brazil-recursive-cmd "git reset --hard origin/mainline && git pull"'
 abbr gc 'git commit -a -m'
 abbr ga 'git commit --amend -a'
-abbr wsync 'brazil-recursive-cmd 'git pull --autostash --rebase' --allPackages && brazil ws sync --md'
-abbr rsync 'rsync -rlz --exclude-from=$HOME/dots/rsync/excludes.txt $HOME/workspace/'
 
 set fish_greeting
 

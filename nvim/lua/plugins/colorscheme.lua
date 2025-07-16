@@ -1,25 +1,25 @@
 return {
-  -- {
-  --   'navarasu/onedark.nvim',
-  --   lazy = false, priority = 1000,
-  --   config = function()
-  --     require('onedark').setup {
-  --       style = 'darker', -- opt: darker, cool, warmer, deep
-  --       transparent = true,
-  --     }
-  --     require('onedark').load()
-  --   end
-  -- }
   {
-    'vague2k/vague.nvim',
+    'navarasu/onedark.nvim',
     lazy = false, priority = 1000,
     config = function()
-      require('vague').setup({
+      require('onedark').setup {
+        style = 'darker', -- opt: darker, cool, warmer, deep
         transparent = true,
-      })
-      vim.cmd('colorscheme vague')
+      }
+      require('onedark').load()
     end
-  }
+  },
+  -- {
+  --   'vague2k/vague.nvim',
+  --   lazy = false, priority = 1000,
+  --   config = function()
+  --     require('vague').setup({
+  --       transparent = true,
+  --     })
+  --     vim.cmd('colorscheme vague')
+  --   end
+  -- },
   -- {
   --   'uloco/bluloco.nvim',
   --   lazy = false, priority = 1000,
@@ -30,19 +30,5 @@ return {
   --     })
   --     vim.cmd('colorscheme bluloco')
   --   end
-  -- }
-  -- {
-  --   'webhooked/kanso.nvim',
-  --   lazy = false, priority = 1000,
-  --   config = function()
-  --     require('kanso').setup({
-  --       theme = 'zen', -- 'zen', 'ink', 'mist'
-  --       transparent = true,
-  --       background = {
-  --         dark = 'zen',
-  --       }
-  --     })
-  --     vim.cmd('colorscheme kanso')
-  --   end
-  -- }
+  -- },
 }
