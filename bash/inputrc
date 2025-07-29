@@ -1,0 +1,20 @@
+# man readline for all options
+# cat -v for checking key outputs
+
+set bell-style none
+set meta-flag on
+set input-meta on
+set convert-meta off
+set output-meta on
+set show-all-if-unmodified on
+set echo-control-characters off
+set completion-ignore-case on
+#set editing-mode vi
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+"\C-h": backward-kill-word # ctrl+backspace
+"\e[1;5C": forward-word # ctrl+right
+"\e[1;5D": backward-word # ctrl+left
+

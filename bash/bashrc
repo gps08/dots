@@ -1,0 +1,14 @@
+[[ $- != *i* ]] && return # If not interactive, return
+shopt -s autocd dotglob nocaseglob
+
+alias grep='grep -i --color=auto'
+alias ls='ls -HhN --color=auto'
+alias ll='ls -AHlhN --color=auto'
+
+alias e=$EDITOR
+alias f=yazi
+alias se='sudo -e'
+alias sc='cd ~/.local/bin/ && ls'
+alias bc='$EDITOR ~/.config/bash/bashrc'
+
+PS1='[\[\033[01;36m\]\w\[\033[00m\]] '

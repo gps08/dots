@@ -1,0 +1,21 @@
+#!/bin/bash
+
+xrdb $XDG_CONFIG_HOME/x11/xresources
+
+# set gtk4 theme
+GTK_THEME="Adwaita-dark"
+export ADW_DISABLE_PORTAL=1  # fix for file roller to pick gsettings
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface icon-theme "ubo"
+gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
+gsettings set org.gnome.desktop.wm.preferences theme "$GTK_THEME"
+gsettings set org.gtk.Settings.FileChooser startup-mode recent
+
+case $1 in
+    xfce)
+        exec startxfce4
+        ;;
+    *)
+        echo "no WM specified, exiting!"
+        ;;
+esac

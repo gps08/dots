@@ -1,0 +1,24 @@
+export PATH="$HOME/.local/bin:$PATH"
+
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
+export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
+export INPUTRC=$XDG_CONFIG_HOME/bash/inputrc
+export HISTFILE=$HOME/.local/share/bash/history
+export LESSHISTFILE=-
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+export BROWSER="firefox"
+export READER="zathura"
+export TERMINAL="st"
+export COLORTERM="truecolor"
+export PAGER="less"
+export SHELL="/usr/bin/fish"
+
+. $XDG_CONFIG_HOME/bash/bashrc
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
+    startx $XDG_CONFIG_HOME/x11/xinitrc xfce &> /dev/null
+fi
