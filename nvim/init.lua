@@ -3,6 +3,7 @@ require 'lspsetup'
 require 'bootstrap'
 
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+now(function() require('mini.starter').setup() end)
 now(function()
   add({ source = 'vague2k/vague.nvim' })
   require('vague').setup({ transparent = true })
@@ -26,6 +27,7 @@ now(function() require('mini.statusline').setup() end)
 now(function() require('mini.tabline').setup() end)
 now(function() require('mini.pick').setup() end)
 
+later(function() require('mini.ai').setup() end)
 later(function() require('mini.comment').setup() end)
 later(function()
   require('mini.diff').setup({
@@ -45,9 +47,11 @@ later(function()
     hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
   })
   require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'vimdoc' },
+    ensure_installed = { 'lua', 'vimdoc', 'c', 'python', 'java', 'javascript', 'markdown'},
     highlight = { enable = true },
   })
+  vim.wo.foldmethod = 'expr'
+  vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 end)
 later(add({ source = 'folke/which-key.nvim' }))
 

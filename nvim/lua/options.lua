@@ -11,6 +11,7 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.opt.foldlevel = 1  -- higher number means less auto folding
 vim.diagnostic.config({ virtual_text = true })
 -- vim.opt.wrap = false
 -- vim.opt.clipboard:append('unnamedplus')
