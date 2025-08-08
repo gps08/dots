@@ -1,4 +1,4 @@
-vim.lsp.enable({ 'clang', 'luals', 'python', 'tsls', 'jdtls', 'kotlin' })
+vim.lsp.enable({ 'bashls', 'clang', 'luals', 'python', 'tsls', 'jdtls', 'kotlin' })
 
 local group = vim.api.nvim_create_augroup('lsp-attach-capabilities', { clear = true })
 vim.api.nvim_create_autocmd('LspAttach', {
