@@ -20,6 +20,10 @@ now(function()
     mappings = {
       go_in = '<Right>',
       go_out = '<Left>',
+    },
+    windows = {
+      preview = true,
+      width_preview = 80,
     }
   })
 end)
@@ -30,12 +34,7 @@ now(function() require('mini.pick').setup() end)
 later(function() require('mini.ai').setup() end)
 later(function() require('mini.comment').setup() end)
 later(function()
-  require('mini.diff').setup({
-    view = {
-      style = 'sign',
-      signs = { add = '+', change = '~', delete = '-' }
-    }
-  })
+  require('mini.diff').setup({})
 end)
 later(function() require('mini.git').setup() end)
 later(function() require('mini.completion').setup() end)
@@ -47,8 +46,8 @@ later(function()
     hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
   })
   require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'vimdoc', 'c', 'python', 'java', 'javascript', 'markdown'},
-    highlight = { enable = true },
+    ensure_installed = { 'lua', 'bash', 'vimdoc', 'c', 'cpp', 'csv', 'yaml', 'xml',
+      'diff', 'python', 'java', 'javascript', 'markdown' },
   })
   vim.wo.foldmethod = 'expr'
   vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
