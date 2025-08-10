@@ -8,11 +8,11 @@ set -gx CONFIG_HOME $HOME/.config
 
 abbr e $EDITOR
 abbr f yazi
-abbr m rmpc
+abbr fd 'yazi --cwd-file /tmp/cwd && cd "$(cat /tmp/cwd)"'
 
 abbr extract_sub 'ffmpeg -i $1 -map 0:s:$2 $1.srt'
-abbr update 'paru'
 
+abbr sc 'cd $HOME/.local/bin && ls'
 abbr fc '$EDITOR $CONFIG_HOME/fish/config.fish && source $HOME/.config/fish/config.fish'
 abbr tc '$EDITOR $CONFIG_HOME/tmux/tmux.conf && tmux source-file $HOME/.config/tmux/tmux.conf'
 abbr ec '$EDITOR $CONFIG_HOME/nvim/' 

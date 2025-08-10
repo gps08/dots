@@ -1,0 +1,17 @@
+profile=bash/profile
+bashrc=bash/bashrc
+nvim=nvim/init.vim
+dmenu=dmenu/config.h
+#dwm=dwm/config.h
+st=st/config.h
+dunst=dunst/dunstrc
+fonts=fontconfig/fonts.conf
+#slstatus=slstatus/config.h
+gtk3=gtk-3.0/settings.ini
+gtk2=gtk-2.0/gtkrc
+yazi=yazi/
+mpv=mpv/mpv.conf
+zathura=zathura/zathurarc
+mimeapps=mimeapps.list
+xinit=x11/xinitrc
+xresources=x11/xresources

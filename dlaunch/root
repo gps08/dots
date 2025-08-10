@@ -1,0 +1,41 @@
+update=st -c float nokill update
+htop=st -c float htop
+yazi=st yazi
+sound=st -c float pulsemixer
+network=st -c float impala
+python=st -c float python3
+
+# apps
+steam
+minecraft=minecraft-launcher
+qbittorrent
+tor=tor-browser
+scrot=xfce4-screenshooter
+mount=dmount
+dmenu_run
+st=st -c float
+firefox
+private=firefox --private-window
+xfce4-run=xfce4-appfinder -c
+
+# dlaunch launchers
+configure=dlaunch config "cd $XDG_CONFIG_HOME && st -c float $EDITOR"
+
+# configs
+edit menu=st -c float $EDITOR $XDG_CONFIG_HOME/dlaunch/root
+edit configs=st -c float $EDITOR $XDG_CONFIG_HOME/dlaunch/menu/config
+
+# suckless
+make dmenu=cd $XDG_CONFIG_HOME/dmenu && st -c float nokill sudo make
+make st=cd $XDG_CONFIG_HOME/st && st -c float nokill sudo make
+
+# xfce shortcuts
+settings=xfce4-settings-manager
+appearance=xfce4-appearance-settings
+window=xfwm4-settings
+keyboard=xfce4-keyboard-settings
+mouse=xfce4-mouse-settings
+panel=xfce4-panel --preferences
+display=xfce4-display-settings
+xfce4-taskmanager
+desktop=xfdesktop-settings

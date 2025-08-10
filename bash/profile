@@ -20,5 +20,5 @@ export SHELL="/usr/bin/fish"
 
 . $XDG_CONFIG_HOME/bash/bashrc
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
-    startx $XDG_CONFIG_HOME/x11/xinitrc xfce &> /dev/null
+    startx $XDG_CONFIG_HOME/x11/xinitrc &> /dev/null
 fi

@@ -1,0 +1,3 @@
+poweroff=poweroff
+kill x=pkill x
+reboot=reboot

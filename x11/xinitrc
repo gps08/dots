@@ -11,11 +11,4 @@ gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 gsettings set org.gnome.desktop.wm.preferences theme "$GTK_THEME"
 gsettings set org.gtk.Settings.FileChooser startup-mode recent
 
-case $1 in
-    xfce)
-        exec startxfce4
-        ;;
-    *)
-        echo "no WM specified, exiting!"
-        ;;
-esac
+exec startxfce4
