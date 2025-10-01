@@ -5,13 +5,13 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 vim.opt.backspace = 'indent,eol,start'
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.foldlevel = 1  -- higher number means less auto folding
+vim.opt.foldlevel = 10  -- higher number means less auto folding
 vim.diagnostic.config({ virtual_text = true })
 -- vim.opt.wrap = false
 -- vim.opt.clipboard:append('unnamedplus')

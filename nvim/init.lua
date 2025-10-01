@@ -24,6 +24,9 @@ now(function()
     windows = {
       preview = true,
       width_preview = 80,
+    },
+    options = {
+      use_as_default_explorer = false
     }
   })
 end)
@@ -33,11 +36,13 @@ now(function() require('mini.pick').setup() end)
 
 later(function() require('mini.ai').setup() end)
 later(function() require('mini.comment').setup() end)
-later(function()
-  require('mini.diff').setup({})
-end)
+later(function() require('mini.diff').setup({}) end)
 later(function() require('mini.git').setup() end)
 later(function() require('mini.completion').setup() end)
+later(function()
+  add({ source = 'norcalli/nvim-colorizer.lua' })
+  require('colorizer').setup({})
+end)
 later(function()
   add({
     source = 'nvim-treesitter/nvim-treesitter',
@@ -52,6 +57,16 @@ later(function()
   vim.wo.foldmethod = 'expr'
   vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 end)
+later(
+  add({
+    source = 'nvim-tree/nvim-tree.lua',
+    depends = {
+      'nvim-tree/nvim-web-devicons',
+    }
+  }),
+  require('nvim-tree').setup({
+  })
+)
 later(add({ source = 'folke/which-key.nvim' }))
 
 require 'keymaps'
