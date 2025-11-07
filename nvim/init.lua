@@ -15,8 +15,10 @@ now(function()
   vim.notify = require('mini.notify').make_notify()
 end)
 now(function() require('mini.icons').setup() end)
+now(function() require('mini.pick').setup() end)
 now(function()
-  require('mini.files').setup({
+  local files = require('mini.files')
+  files.setup({
     mappings = {
       go_in = '<Right>',
       go_out = '<Left>',
@@ -29,10 +31,28 @@ now(function()
       use_as_default_explorer = false
     }
   })
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'MiniFilesBufferCreate',
+    callback = function(args)
+      local b = args.data.buf_id
+      vim.keymap.set('n', 'gs', function()
+        local path = (files.get_fs_entry() or {}).path
+        if path == nil then return vim.notify('invalid entry') end
+        require('mini.pick').builtin.grep_live({}, { source = { cwd = path } })
+      end, { buffer = b, desc = '[s]earch here' })
+      vim.keymap.set('n', 'gy', function()
+          local path = (files.get_fs_entry() or {}).path
+          if path == nil then return vim.notify('invalid entry') end
+          vim.fn.setreg('+', path)
+        end,
+        { buffer = b, desc = '[y]ank path' })
+    end,
+  })
 end)
+
 now(function() require('mini.statusline').setup() end)
-now(function() require('mini.tabline').setup() end)
-now(function() require('mini.pick').setup() end)
+now(function() require('mini.sessions').setup() end)
+now(function() require('mini.tabline').setup({ show_icons = false }) end)
 
 later(function() require('mini.ai').setup() end)
 later(function() require('mini.comment').setup() end)
@@ -65,6 +85,9 @@ later(
     }
   }),
   require('nvim-tree').setup({
+    view = {
+      width = 50,
+    },
   })
 )
 later(add({ source = 'folke/which-key.nvim' }))
