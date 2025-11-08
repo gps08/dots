@@ -15,7 +15,7 @@ now(function()
   vim.notify = require('mini.notify').make_notify()
 end)
 now(function() require('mini.icons').setup() end)
-now(function() require('mini.pick').setup() end)
+now(function() add({ source = 'ibhagwan/fzf-lua' }) end)
 now(function()
   local files = require('mini.files')
   files.setup({
@@ -38,7 +38,7 @@ now(function()
       vim.keymap.set('n', 'gs', function()
         local path = (files.get_fs_entry() or {}).path
         if path == nil then return vim.notify('invalid entry') end
-        require('mini.pick').builtin.grep_live({}, { source = { cwd = path } })
+        vim.cmd('FzfLua files cwd=' .. path)
       end, { buffer = b, desc = '[s]earch here' })
       vim.keymap.set('n', 'gy', function()
           local path = (files.get_fs_entry() or {}).path
