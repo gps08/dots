@@ -15,7 +15,10 @@ now(function()
   vim.notify = require('mini.notify').make_notify()
 end)
 now(function() require('mini.icons').setup() end)
-now(function() add({ source = 'ibhagwan/fzf-lua' }) end)
+now(function()
+  add({ source = 'ibhagwan/fzf-lua' })
+  require('fzf-lua').setup({'border-fused'})
+end)
 now(function()
   local files = require('mini.files')
   files.setup({
@@ -44,8 +47,7 @@ now(function()
           local path = (files.get_fs_entry() or {}).path
           if path == nil then return vim.notify('invalid entry') end
           vim.fn.setreg('+', path)
-        end,
-        { buffer = b, desc = '[y]ank path' })
+        end, { buffer = b, desc = '[y]ank path' })
     end,
   })
 end)
@@ -56,8 +58,19 @@ now(function() require('mini.tabline').setup({ show_icons = false }) end)
 
 later(function() require('mini.ai').setup() end)
 later(function() require('mini.comment').setup() end)
-later(function() require('mini.diff').setup({}) end)
-later(function() require('mini.git').setup() end)
+later(function()
+  add({ source = 'lewis6991/gitsigns.nvim' })
+  require('gitsigns').setup({
+    signs = {
+      add = { text = '+' },
+      change = { text = '~' },
+      delete = { text = '_' },
+      topdelete = { text = '‾' },
+      changedelete = { text = '~' },
+      untracked = { text = '┆' },
+    }
+  })
+end)
 later(function() require('mini.completion').setup() end)
 later(function()
   add({ source = 'norcalli/nvim-colorizer.lua' })
