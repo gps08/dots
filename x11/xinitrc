@@ -11,4 +11,5 @@ gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 gsettings set org.gnome.desktop.wm.preferences theme "$GTK_THEME"
 gsettings set org.gtk.Settings.FileChooser startup-mode recent
 
+setxkbmap -option caps:none
 exec startxfce4

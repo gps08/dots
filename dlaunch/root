@@ -1,33 +1,36 @@
-update=st -c float nokill update
-htop=st -c float htop
+update=st nokill update
+htop=st htop
 yazi=st yazi
-sound=st -c float pulsemixer
-network=st -c float impala
-python=st -c float python3
+sound=st pulsemixer
+network=st impala
+python=st python3
+nvtop=st nvtop
 
 # apps
 steam
-minecraft=minecraft-launcher
+minecraft=prismlauncher
 qbittorrent
+gparted
+darktable
 tor=tor-browser
 scrot=xfce4-screenshooter
 mount=dmount
 dmenu_run
-st=st -c float
+st
 firefox
 private=firefox --private-window
 xfce4-run=xfce4-appfinder -c
 
 # dlaunch launchers
-configure=dlaunch config "cd $XDG_CONFIG_HOME && st -c float $EDITOR"
+configure=dlaunch config "cd $XDG_CONFIG_HOME && st $EDITOR"
 
 # configs
-edit menu=st -c float $EDITOR $XDG_CONFIG_HOME/dlaunch/root
-edit configs=st -c float $EDITOR $XDG_CONFIG_HOME/dlaunch/menu/config
+edit menu=st $EDITOR $XDG_CONFIG_HOME/dlaunch/root
+edit configs=st $EDITOR $XDG_CONFIG_HOME/dlaunch/menu/config
 
 # suckless
-make dmenu=cd $XDG_CONFIG_HOME/dmenu && st -c float nokill sudo make
-make st=cd $XDG_CONFIG_HOME/st && st -c float nokill sudo make
+make dmenu=cd $XDG_CONFIG_HOME/dmenu && st nokill sudo make
+make st=cd $XDG_CONFIG_HOME/st && st nokill sudo make
 
 # xfce shortcuts
 settings=xfce4-settings-manager
