@@ -11,6 +11,7 @@ vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.opt.fixeol = false
 vim.opt.foldlevel = 10  -- higher number means less auto folding
 vim.diagnostic.config({ virtual_text = true })
 -- vim.opt.wrap = false

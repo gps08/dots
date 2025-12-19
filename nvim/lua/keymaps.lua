@@ -36,7 +36,7 @@ mapLeader('h', '<cmd>FzfLua helptags<CR>', 'search [h]elp')
 mapLeader('/', '<cmd>FzfLua live_grep<CR>', 'live grep')
 mapLeader('<Tab>', '<cmd>FzfLua resume<CR>', 'live grep')
 mapLeader('e', '<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>', '[e]xplore files')
-mapLeader('n', '<cmd>NvimTreeToggle<CR>', '[n]vim tree toggle')
+mapLeader('t', '<cmd>NvimTreeToggle<CR>', '[n]vim tree toggle')
 
 mapLeader('gd', '<cmd>Gitsigns diffthis HEAD<CR>', 'git [d]iff toggle')
 mapLeader('gp', '<cmd>Gitsigns preview_hunk_inline<CR>', '[p]review hunk')
