@@ -20,6 +20,7 @@ st
 firefox
 private=firefox --private-window
 xfce4-run=xfce4-appfinder -c
+bluetooh=blueman-manager
 
 # dlaunch launchers
 configure=dlaunch config "cd $XDG_CONFIG_HOME && st $EDITOR"

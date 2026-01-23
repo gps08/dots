@@ -19,6 +19,11 @@
 # surimiOrange  "#e46876"
 # waveAqua2     "#7aa89f"
 
+[indicator]
+current = { reversed = true } 
+preview = { reversed = true } 
+padding = { open = "█", close = "█" }
+
 [manager]
 marker_copied = { fg = "#8a9a7b", bg = "#8a9a7b" }
 marker_cut = { fg = "#e46876", bg = "#e46876" }
@@ -26,8 +31,6 @@ marker_marked = { fg = "#a292a3", bg = "#a292a3" }
 marker_selected = { fg = "#e46876", bg = "#e46876" }
 
 cwd = { fg = "#e6c384" }
-hovered = { reversed = true }
-preview_hovered = { reversed = true }
 
 find_keyword = { fg = "#e46876", bg = "#181616" }
 find_position = {}
