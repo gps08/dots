@@ -38,12 +38,12 @@ now(function()
     pattern = 'MiniFilesBufferCreate',
     callback = function(args)
       local b = args.data.buf_id
-      vim.keymap.set('n', 'gs', function()
+      vim.keymap.set('n', '<leader>s', function()
         local path = (files.get_fs_entry() or {}).path
         if path == nil then return vim.notify('invalid entry') end
         vim.cmd('FzfLua files cwd=' .. path)
       end, { buffer = b, desc = '[s]earch here' })
-      vim.keymap.set('n', 'gy', function()
+      vim.keymap.set('n', '<leader>y', function()
           local path = (files.get_fs_entry() or {}).path
           if path == nil then return vim.notify('invalid entry') end
           vim.fn.setreg('+', path)
