@@ -61,4 +61,12 @@ mapNormal('<Esc>', '<cmd>nohlsearch<CR>', 'clear search highlight')
 vim.keymap.set('i', 'M-p', '<C-r>"a', { desc = 'paste from " register' })
 
 mapVisual('//', 'y:/<C-r>"<CR>', 'Search for selection in current file')
-mapVisual('/s', '<cmd>FzfLua grep_visual<CR>', 'Search for selection as a [s]ymbol')
+mapVisual('/s', '<cmd>FzfLua grep_visual<CR>', 'Search for selection as [s]ymbol')
+vim.keymap.set('v', '/f',
+  function()
+    local fzf = require('fzf-lua')
+    local selection = require("fzf-lua.utils").get_visual_selection()
+    fzf.files({ query = selection })
+  end,
+  { desc = 'Search for selection as [f]ile', silent = true }
+)
