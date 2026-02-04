@@ -64,9 +64,9 @@ mapVisual('//', 'y:/<C-r>"<CR>', 'Search for selection in current file')
 mapVisual('/s', '<cmd>FzfLua grep_visual<CR>', 'Search for selection as [s]ymbol')
 vim.keymap.set('v', '/f',
   function()
-    local fzf = require('fzf-lua')
-    local selection = require("fzf-lua.utils").get_visual_selection()
-    fzf.files({ query = selection })
+    require('fzf-lua').files({
+      query = require("fzf-lua.utils").get_visual_selection()
+    })
   end,
   { desc = 'Search for selection as [f]ile', silent = true }
 )
