@@ -101,7 +101,15 @@ later(
     view = {
       width = 50,
     },
-  })
+  }),
+  vim.api.nvim_create_user_command(
+    'FF', function()
+      require('nvim-tree.api').tree.find_file({
+        open = true, focus = true
+      })
+    end,
+    { desc = 'find file' }
+  )
 )
 later(add({ source = 'folke/which-key.nvim' }))
 
