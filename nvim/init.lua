@@ -41,7 +41,7 @@ now(function()
       vim.keymap.set('n', '<leader>s', function()
         local path = (files.get_fs_entry() or {}).path
         if path == nil then return vim.notify('invalid entry') end
-        vim.cmd('FzfLua files cwd=' .. path)
+        vim.cmd('FzfLua live_grep cwd=' .. path)
       end, { buffer = b, desc = '[s]earch here' })
       vim.keymap.set('n', '<leader>y', function()
           local path = (files.get_fs_entry() or {}).path
