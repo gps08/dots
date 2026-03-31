@@ -11,7 +11,11 @@ now(function()
   vim.api.nvim_set_hl(0, 'TabLineSel', { bg="#bbbbbb", fg="#000000" })
 end)
 now(function()
-  require('mini.notify').setup()
+  require('mini.notify').setup({
+    lsp_progress = {
+      enable = false,
+    }
+  })
   vim.notify = require('mini.notify').make_notify()
 end)
 now(function() require('mini.icons').setup() end)
@@ -30,9 +34,6 @@ now(function()
       preview = true,
       width_preview = 80,
     },
-    options = {
-      use_as_default_explorer = false
-    }
   })
   vim.api.nvim_create_autocmd('User', {
     pattern = 'MiniFilesBufferCreate',
@@ -71,10 +72,9 @@ later(function()
     }
   })
 end)
-later(function() require('mini.completion').setup() end)
 later(function()
-  add({ source = 'norcalli/nvim-colorizer.lua' })
-  require('colorizer').setup({})
+  require('mini.completion').setup()
+  vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
 end)
 later(function()
   add({
@@ -86,31 +86,12 @@ later(function()
   require('nvim-treesitter.configs').setup({
     ensure_installed = { 'lua', 'bash', 'vimdoc', 'c', 'cpp', 'csv', 'yaml', 'xml',
       'diff', 'python', 'java', 'javascript', 'markdown' },
+    highlight = { enable = true },
+    indent = { enable = true },
   })
-  vim.wo.foldmethod = 'expr'
-  vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 end)
-later(
-  add({
-    source = 'nvim-tree/nvim-tree.lua',
-    depends = {
-      'nvim-tree/nvim-web-devicons',
-    }
-  }),
-  require('nvim-tree').setup({
-    view = {
-      width = 50,
-    },
-  }),
-  vim.api.nvim_create_user_command(
-    'FF', function()
-      require('nvim-tree.api').tree.find_file({
-        open = true, focus = true
-      })
-    end,
-    { desc = 'find file' }
-  )
-)
-later(add({ source = 'folke/which-key.nvim' }))
+later(function()
+  add({ source = 'folke/which-key.nvim' })
+end)
 
 require 'keymaps'

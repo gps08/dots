@@ -1,33 +1,37 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.signcolumn = 'yes'
-vim.opt.backspace = 'indent,eol,start'
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.fixeol = false
-vim.opt.foldlevel = 10  -- higher number means less auto folding
-vim.diagnostic.config({ virtual_text = true })
--- vim.opt.wrap = false
--- vim.opt.clipboard:append('unnamedplus')
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.signcolumn = 'auto:1'
+vim.o.backspace = 'indent,eol,start'
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.fixeol = false
+vim.o.undofile = true
+vim.o.scrolloff = 8
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldlevel = 10  -- higher number means less auto folding
+vim.o.foldtext = ''
+-- vim.o.wrap = false
+-- vim.o.clipboard:append('unnamedplus')
 
 -- ui stuff
 vim.g.have_nerd_font = true
 vim.g.icons_enabled = true
-vim.opt.termguicolors = true
-vim.opt.relativenumber = false
-vim.opt.number = true
-vim.opt.cursorline = true
-vim.opt.background = 'dark'
-vim.opt.splitright = true
-vim.opt.splitbelow = false
-vim.opt.mouse = 'a'
+vim.o.termguicolors = true
+vim.o.relativenumber = false
+vim.o.number = true
+vim.o.cursorline = true
+vim.o.background = 'dark'
+vim.o.splitright = true
+vim.o.splitbelow = false
+vim.o.mouse = 'a'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 0
 
