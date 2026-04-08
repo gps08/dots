@@ -39,16 +39,15 @@ now(function()
     pattern = 'MiniFilesBufferCreate',
     callback = function(args)
       local b = args.data.buf_id
-      vim.keymap.set('n', '<leader>s', function()
-        local path = (files.get_fs_entry() or {}).path
-        if path == nil then return vim.notify('invalid entry') end
-        vim.cmd('FzfLua live_grep cwd=' .. path)
-      end, { buffer = b, desc = '[s]earch here' })
-      vim.keymap.set('n', '<leader>y', function()
-          local path = (files.get_fs_entry() or {}).path
-          if path == nil then return vim.notify('invalid entry') end
-          vim.fn.setreg('+', path)
-        end, { buffer = b, desc = '[y]ank path' })
+      local function with_path(fn)
+        return function()
+          local path = (files.get_fs_entry(b) or {}).path
+          if path then fn(path) else vim.notify('invalid entry') end
+        end
+      end
+      local map = function(key, fn, desc) vim.keymap.set('n', key, fn, { buffer = b, desc = desc }) end
+      map('<leader>s', with_path(function(p) vim.cmd('FzfLua live_grep cwd=' .. p) end), '[s]earch here')
+      map('<leader>y', with_path(function(p) vim.fn.setreg('+', p) end), '[y]ank path')
     end,
   })
 end)
