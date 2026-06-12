@@ -46,7 +46,8 @@ now(function()
         end
       end
       local map = function(key, fn, desc) vim.keymap.set('n', key, fn, { buffer = b, desc = desc }) end
-      map('<leader>s', with_path(function(p) vim.cmd('FzfLua live_grep cwd=' .. p) end), '[s]earch here')
+      map('<leader>o', with_path(function(p) vim.cmd('FzfLua files cwd=' .. p) end), '[o]pen file')
+      map('<leader>f', with_path(function(p) vim.cmd('FzfLua live_grep cwd=' .. p) end), '[f]ind using grep')
       map('<leader>y', with_path(function(p) vim.fn.setreg('+', p) end), '[y]ank path')
     end,
   })
@@ -74,20 +75,6 @@ end)
 later(function()
   require('mini.completion').setup()
   vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
-end)
-later(function()
-  add({
-    source = 'nvim-treesitter/nvim-treesitter',
-    checkout = 'master',
-    monitor = 'main',
-    hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
-  })
-  require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'bash', 'vimdoc', 'c', 'cpp', 'csv', 'yaml', 'xml',
-      'diff', 'python', 'java', 'javascript', 'markdown' },
-    highlight = { enable = true },
-    indent = { enable = true },
-  })
 end)
 later(function()
   add({ source = 'folke/which-key.nvim' })

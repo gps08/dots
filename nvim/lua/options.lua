@@ -11,12 +11,13 @@ vim.o.softtabstop = 2
 vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
+vim.o.cindent = true
 vim.o.fixeol = false
 vim.o.undofile = true
 vim.o.scrolloff = 8
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.o.foldlevel = 10  -- higher number means less auto folding
+vim.o.foldlevel = 999  -- higher number means less auto folding
 vim.o.foldtext = ''
 -- vim.o.wrap = false
 -- vim.o.clipboard:append('unnamedplus')
@@ -32,6 +33,7 @@ vim.o.background = 'dark'
 vim.o.splitright = true
 vim.o.splitbelow = false
 vim.o.mouse = 'a'
+vim.o.mousemodel = 'extend'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 0
 
