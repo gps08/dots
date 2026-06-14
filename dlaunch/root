@@ -1,37 +1,36 @@
-update=st nokill update
-htop=st htop
-yazi=st yazi
-sound=st pulsemixer
-network=st impala
-python=st python3
-nvtop=st nvtop
+update=kitty nokill update
+htop=kitty htop
+yazi=kitty yazi
+network=kitty impala
+python=kitty python3
+nvtop=kitty nvtop
 
 # apps
 steam
+retroarch
 minecraft=prismlauncher
 qbittorrent
 gparted
 darktable
+pavucontrol
+soundsel
 tor=tor-browser
 scrot=xfce4-screenshooter
 mount=dmount
 dmenu_run
-st
 firefox
 private=firefox --private-window
 xfce4-run=xfce4-appfinder -c
-bluetooh=blueman-manager
+bluetooth=blueman-manager
+gaane=kitty gaane
+gnome-font-viewer
 
 # dlaunch launchers
-configure=dlaunch config "cd $XDG_CONFIG_HOME && st $EDITOR"
+configure=dlaunch config "cd $XDG_CONFIG_HOME && kitty $EDITOR"
 
 # configs
-edit menu=st $EDITOR $XDG_CONFIG_HOME/dlaunch/root
-edit configs=st $EDITOR $XDG_CONFIG_HOME/dlaunch/menu/config
-
-# suckless
-make dmenu=cd $XDG_CONFIG_HOME/dmenu && st nokill sudo make
-make st=cd $XDG_CONFIG_HOME/st && st nokill sudo make
+edit menu=kitty $EDITOR $XDG_CONFIG_HOME/dlaunch/root
+edit configs=kitty $EDITOR $XDG_CONFIG_HOME/dlaunch/menu/config
 
 # xfce shortcuts
 settings=xfce4-settings-manager
