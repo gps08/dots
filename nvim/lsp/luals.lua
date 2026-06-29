@@ -12,8 +12,11 @@ return {
         version = 'LuaJIT',
       },
       diagnostics = {
-        globals = { 'vim', 'MiniDeps' },
+        globals = { 'vim', 'MiniTabline', 'MiniFiles' },
         disable = { 'missing-fields' },
+      },
+      workspace = {
+        library = { vim.env.VIMRUNTIME },
       },
       signatureHelp = { enabled = true },
     },
