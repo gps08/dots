@@ -1,17 +1,12 @@
 require 'options'
 require 'lspsetup'
+require 'colorscheme'
 
 -- plugins
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
-vim.pack.add({ 'https://github.com/vague2k/vague.nvim' })
 vim.pack.add({ 'https://github.com/ibhagwan/fzf-lua' })
 vim.pack.add({ 'https://github.com/lewis6991/gitsigns.nvim' })
 vim.pack.add({ 'https://github.com/folke/which-key.nvim' })
-
--- colorscheme
-require('vague').setup({ transparent = true })
-vim.cmd('colorscheme vague')
-vim.api.nvim_set_hl(0, 'TabLineSel', { bg="#bbbbbb", fg="#000000" })
 
 -- plugin configs
 require('mini.starter').setup()

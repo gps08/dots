@@ -3,7 +3,6 @@ vim.g.maplocalleader = '\\'
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.inccommand = 'split'
 vim.o.signcolumn = 'auto:1'
 vim.o.backspace = 'indent,eol,start'
 vim.o.tabstop = 2
