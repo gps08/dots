@@ -1,3 +1,30 @@
 [user]
 	email = gurpreet15140@iiitd.ac.in
 	name = gps
+[color]
+	ui = auto
+[core]
+	pager = delta
+	editor = nvim
+	excludesfile = /home/gps/.config/git/.gitignore
+	autocrlf = input
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  dark = true
+[push]
+	default = simple
+[pull]
+	rebase = true
+[merge]
+  conflictStyle = zdiff3
+  tool = meld
+[alias]
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+  update = submodule update --init --recursive
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+  clean = git-lfs clean -- %f

@@ -28,10 +28,11 @@ abbr tl 'tmux list-sessions'
 abbr gs 'git status'
 abbr gb 'git branch'
 abbr gl 'git log'
-abbr gr 'git reset --hard origin/mainline && git pull'
+abbr gr 'git rebase -i'
 abbr gp 'git pull --rebase --autostash'
-abbr gc 'git commit -a -m'
-abbr ga 'git commit --amend -a'
+abbr gc 'git commit -m'
+abbr ga 'git commit --amend'
+abbr gf 'git fetch --all'
 
 set fish_greeting
 
