@@ -7,8 +7,8 @@ nvtop=kitty nvtop
 
 # apps
 steam
-retroarch
 minecraft=prismlauncher
+nbtexplorer
 qbittorrent
 gparted
 darktable

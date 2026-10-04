@@ -3,7 +3,7 @@
 xrdb $XDG_CONFIG_HOME/x11/xresources
 
 # set gtk4 theme
-GTK_THEME="Adwaita-dark"
+GTK_THEME="Kripton"
 export ADW_DISABLE_PORTAL=1  # fix for file roller to pick gsettings
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface icon-theme "ubo"

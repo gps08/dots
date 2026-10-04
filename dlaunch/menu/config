@@ -1,11 +1,12 @@
 profile=bash/profile
 bashrc=bash/bashrc
-nvim=nvim/init.vim
+fish=fish/config.fish
 dmenu=dmenu/config.h
 kitty=kitty/kitty.conf
 fonts=fontconfig/fonts.conf
 gtk3=gtk-3.0/settings.ini
 gtk2=gtk-2.0/gtkrc
+nvim=nvim/
 yazi=yazi/
 mpv=mpv/mpv.conf
 zathura=zathura/zathurarc
